@@ -8,16 +8,19 @@ function selectedBeast(props) {
     <Modal show={props.show} onHide={props.handleClose}>
       <Modal.Dialog>
         <Modal.Header closeButton>
-          <Modal.Title>{props.selectedBeast.title}</Modal.Title>
+          {/* TODO: Display beast title */}
+          {/* <Modal.Title>{props.selectedBeast.title}</Modal.Title> */}
         </Modal.Header>
 
         <Modal.Body>
           <Card className="modal-beast-card" onClick={props.displayAsModal}>
-            <Card.Img variant="top" alt={props.selectedBeast.title} src={props.selectedBeast.image_url} />
+            {/* TODO: Show image */}
+            {/* <Card.Img variant="top" alt={props.selectedBeast.title} src={props.selectedBeast.image_url} /> */}
             <Card.Body>
               <Card.Title>{props.selectedBeast.title}</Card.Title>
               <Card.Text>
-                {props.selectedBeast.description}
+                {/* TODO: Show description */}
+                {/* {props.selectedBeast.description} */}
               </Card.Text>
             </Card.Body>
           </Card>
