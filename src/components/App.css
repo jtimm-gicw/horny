@@ -123,8 +123,8 @@ footer {
 /* Brand text */
 .custom-navbar .navbar-brand {
   color: #5a3e5c !important;
+  font-size: 2.2rem !important;
   font-weight: 700;
-  font-size: 1.4rem;
 }
 
 /* Hover effect */
