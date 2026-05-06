@@ -1,14 +1,14 @@
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
 
-
-
-
-function Header(){
+function Header() {
   return (
-    <h1>
-      Gallery of Horns
-    </h1>
-  )
-
+    <Container>
+      <Navbar className="custom-navbar">
+        <Navbar.Brand href="#home">Gallery of Horns</Navbar.Brand>
+      </Navbar>
+    </Container>
+  );
 }
 
-export default Header
+export default Header;

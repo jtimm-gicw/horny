@@ -1,10 +1,11 @@
+import Navbar from 'react-bootstrap/Navbar';
 
-
-
-export default function Footer(){
-  <h4>
-    Author: Jason Timm
-  </h4>
+function Footer() {
+  return (
+     <Navbar className="custom-footer">
+      <Navbar.Brand href="#home">Author: Code Fellows</Navbar.Brand>
+    </Navbar>
+  );
 }
 
-
+export default Footer;

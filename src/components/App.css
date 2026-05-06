@@ -1,0 +1,190 @@
+/* 🌈 Global Reset + Base */
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #dbfbfc, #f4eeff);
+}
+
+/* 🧱 Main App Container */
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+/* 🧢 Header */
+header {
+  background: #ffe4ec;
+  color: #5a3e5c;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 🐐 Gallery Wrapper (works with your Container) */
+.gallery {
+  margin-top: 10px;
+}
+
+/* 🐉 Beast Card (Bootstrap-friendly styling) */
+.beast-card {
+  background: #ffffffcc !important;
+  border-radius: 16px !important;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  backdrop-filter: blur(6px);
+  border: none !important;
+}
+
+/* ✨ Hover effect */
+.beast-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.6);
+}
+
+/* 🖼️ Image */
+.beast-card .card-img-top {
+  border-radius: 12px;
+}
+
+/* 🏷️ Title */
+.beast-card .card-title {
+  color: #6c5b7b;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* 👍 Text */
+.beast-card .card-text {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* ❤️ Vote count emphasis */
+.beast-card .card-text:first-of-type {
+  font-weight: bold;
+  color: #d63384;
+}
+
+/* 🦄 Modal Styling */
+.modal-content {
+  border-radius: 16px;
+  background: #fff0f6;
+  border: none;
+}
+
+.modal-header {
+  background: #ffd6e0;
+  border-bottom: none;
+}
+
+.modal-title {
+  color: #5a3e5c;
+}
+
+.modal-body {
+  color: #444;
+}
+
+/* 🔘 Buttons */
+button {
+  background: #cdb4db;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background: #b392c5;
+  transform: scale(1.05);
+}
+
+/* 🦶 Footer */
+footer {
+  margin-top: 30px;
+  padding: 15px;
+  background: #e0f7fa;
+  border-radius: 12px;
+  color: #4a6c6f;
+}
+
+/* 🧢 Custom Navbar (Pastel Theme) */
+.custom-navbar {
+  background: linear-gradient(90deg, #fffcddef, #f6d7f9) !important;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Brand text */
+.custom-navbar .navbar-brand {
+  color: #5a3e5c !important;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+/* Hover effect */
+.custom-navbar .navbar-brand:hover {
+  color: #b565a7 !important;
+}
+
+/* 🦶 Custom Footer */
+.custom-footer {
+  background: linear-gradient(90deg, #e0f7fa, #ffe4ec) !important;
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 30px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Footer text */
+.custom-footer .navbar-brand {
+  color: #4a6c6f !important;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Center text */
+.custom-footer .container {
+  display: flex;
+  justify-content: center;
+}
+
+/* 🦄 Pastel Modal Card */
+.modal-beast-card {
+  background: #e3cefc !important; /* soft pastel pink */
+  color: #5a3e5c !important;
+  border-radius: 16px !important;
+  border: none !important;
+  padding: 10px;
+  text-align: center;
+}
+
+/* 🖼️ Image inside modal */
+.modal-beast-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+/* 🏷️ Title */
+.modal-beast-card .card-title {
+  color: #6c5b7b !important;
+  font-weight: 700;
+}
+
+/* 👍 Text */
+.modal-beast-card .card-text {
+  color: #4a4a4a !important;
+}
+
+/* ✨ Optional soft glow */
+.modal-content {
+  border-radius: 16px;
+  background: #dafaff;
+  border: none;
+}
