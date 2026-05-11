@@ -4,6 +4,7 @@ import Header from './Header.jsx';
 import Gallery from './Gallery.jsx';
 import Footer from './Footer.jsx';
 import SelectedBeast from './SelectedBeast.jsx';
+import './App.css';
 
 function App(props) {
 
