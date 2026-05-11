@@ -2,7 +2,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 function Footer() {
   return (
-     <Navbar className="custom-footer">
+    <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="#home">Author: Code Fellows</Navbar.Brand>
     </Navbar>
   );

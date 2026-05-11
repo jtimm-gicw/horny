@@ -1,36 +1,27 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
-import { Col, Card } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
 
 function HornedBeast(props) {
-
-  const [favorites, setFavorites] = useState(0);
-
-  function addFavorite() {
-    setFavorites(prev => prev + 1);;
-    props.displayAsModal(props.title);
-  };
-
   return (
-    <Col>
-      <Card
-        className="beast-card"
-        style={{ width: '18rem' }}
-        onClick={addFavorite}
-      >
-        <Card.Img variant="top" src={props.src} />
-        <Card.Body>
-          <Card.Title>{props.title}</Card.Title>
-          <Card.Text>
-            ❤️ = {favorites}
-          </Card.Text>
-          <Card.Text>
-            {props.description}
-          </Card.Text>
-        </Card.Body>
-      </Card>
-    </Col>
+    <Card
+      style={{ width: '18rem' }}
+      bg="dark"
+      text="light"
+      onClick={() => props.addFavorite(props.beast)}
+    >
+      <Card.Img variant="top" src={props.beast.image_url} />
+      <Card.Body>
+        <Card.Title>{props.beast.title}</Card.Title>
+        <Card.Text>
+          ❤️ = {props.likes}
+        </Card.Text>
+        <Card.Text>
+          {props.beast.description}
+        </Card.Text>
+      </Card.Body>
+    </Card>
   );
 }
+
 
 export default HornedBeast;

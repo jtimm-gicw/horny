@@ -12,7 +12,11 @@ function selectedBeast(props) {
         </Modal.Header>
 
         <Modal.Body>
-          <Card className="modal-beast-card" onClick={props.displayAsModal}>
+          <Card
+            bg="dark"
+            text="light"
+            onClick={props.displayAsModal}
+          >
             <Card.Img variant="top" alt={props.selectedBeast.title} src={props.selectedBeast.image_url} />
             <Card.Body>
               <Card.Title>{props.selectedBeast.title}</Card.Title>
@@ -28,7 +32,7 @@ function selectedBeast(props) {
         </Modal.Footer>
       </Modal.Dialog>
     </Modal>
-  )
+  );
 }
 
 export default selectedBeast;

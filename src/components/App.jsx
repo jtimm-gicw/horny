@@ -1,33 +1,31 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
-import Header from './Header';
-import Gallery from './Gallery';
-import Footer from './Footer';
-import allBeasts from '../../data.json';
-import SelectedBeast from './SelectedBeast';
-import './App.css';
+import Header from './Header.jsx';
+import Gallery from './Gallery.jsx';
+import Footer from './Footer.jsx';
+import SelectedBeast from './SelectedBeast.jsx';
 
-function App() {
+function App(props) {
 
   const [displayModal, setDisplayModal] = useState(false);
   const [selectedBeast, setSelectedBeast] = useState({});
 
-
-  function displayAsModal(name) {
-    const beastWithName = allBeasts.find(beast => beast.title === name);
-    setSelectedBeast(beastWithName);
+  function displayAsModal(beast) {
+    setSelectedBeast(beast);
     setDisplayModal(true);
-  }
+  };
 
   function handleClose() {
     setDisplayModal(false);
-  }
+  };
 
   return (
     <div className="App">
       <Header />
       <Gallery
-        allBeasts={allBeasts}
+        allBeasts={props.allBeasts}
         displayAsModal={displayAsModal}
+        displayFilteredImages={props.updateAllBeasts}
       />
       <SelectedBeast
         selectedBeast={selectedBeast}
