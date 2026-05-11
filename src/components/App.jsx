@@ -11,7 +11,7 @@ function App() {
   const [displayModal, setDisplayModal] = useState(false);
   const [selectedBeast, setSelectedBeast] = useState({});
   // 🧠 NEW STATE FOR SEARCH --> Stretch Goal
-  // const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   function displayAsModal(name) {
     const beastWithName = allBeasts.find(beast => beast.title === name);
@@ -24,7 +24,7 @@ function App() {
   }
   
   // 🧠 REGEX PATTERN (case-insensitive) ---->
-  // const regex = new RegExp(searchQuery, 'i');
+  const regex = new RegExp(searchQuery, 'i');
 
   // This creates a flexible search pattern based on what the user types.
 //
@@ -35,29 +35,29 @@ function App() {
 // "uni", "Uni", and "UNI" will all match "Unicorn"
 
 // TODO: filter beasts
-// const filteredBeasts = allBeasts.filter(beast => {
-//   return regex.test(beast.title) || regex.test(beast.description);
-// });
+const filteredBeasts = allBeasts.filter(beast => {
+  return regex.test(beast.title) || regex.test(beast.description);
+});
   return (
     <div className="App">
       <Header />
       {/* 🔍 SEARCH INPUT */}
       {/* “The search bar lives in App because App controls the data.
       Gallery just displays whatever App gives it.” */}
-       {/* <div style={{ textAlign: 'center', margin: '20px' }}>
+       <div style={{ textAlign: 'center', margin: '20px' }}>
           <input
             type="text"
             placeholder="Search beasts..."  
           // TODO: update state when typing
-            // value={searchQuery}
-            // onChange={(e) => setSearchQuery(e.target.value)}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
-        </div> */}
+        </div>
       <Gallery
        
-        // allBeasts={filteredBeasts}  <--- ...with this
+        allBeasts={filteredBeasts}  
         // TODO: swap this ---> NEXT LINE
-        allBeasts={allBeasts}
+        // allBeasts={allBeasts}
         displayAsModal={displayAsModal}
       />
       <SelectedBeast
