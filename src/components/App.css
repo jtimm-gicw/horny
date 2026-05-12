@@ -188,3 +188,19 @@ footer {
   background: #dafaff;
   border: none;
 }
+
+/* 🦄 Horn Filter Dropdown */
+.horn-filter {
+  width: 250px;
+  margin: 0 auto 25px auto;
+}
+
+.horn-filter select {
+  border-radius: 12px !important;
+  padding: 10px !important;
+  border: none !important;
+
+  background: #ffffffcc !important;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}

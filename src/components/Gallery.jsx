@@ -1,66 +1,78 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Form from 'react-bootstrap/Form';
+// 🧱 React Bootstrap Components
+import { Container, Row, Form } from 'react-bootstrap';
+
+// 🐉 Individual Beast Card Component
 import HornedBeast from './HornedBeast';
-import rawData from './data.json';
 
 function Gallery(props) {
 
-  const [allBeasts, setAllBeasts] = useState(rawData);
-  const [filteredBeasts, setFilteredBeasts] = useState(rawData);
-
-  function filter(e) {
-    const numHorns = parseInt(e.target.value);
-    let gallery = allBeasts;
-    if (numHorns) {
-      gallery = allBeasts.filter((creature) => creature.horns === numHorns);
-    }
-    setFilteredBeasts(gallery);
-  };
-
-  function addFavorite(favoritedBeast) {
-    const updatedBeasts = allBeasts.map(beast => {
-      if (beast._id === favoritedBeast._id) {
-        beast.favorites++;
-      }
-      return beast;
-    });
-    setAllBeasts(updatedBeasts);
-    props.displayAsModal(favoritedBeast);
-  }
-
-
   return (
-    <div id="beast-container">
-      <Form>
-        <Form.Group controlId="exampleForm.ControlSelect1">
-          <Form.Label>How Many Horns?</Form.Label>
-          <Form.Control as="select" onChange={filter}>
-            <option value="">All</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-            <option value="100">Wow...</option>
-          </Form.Control>
-        </Form.Group>
+
+    // 🖼️ Main Gallery Container
+    <Container className="gallery">
+
+      {/* 🦄 FILTER DROPDOWN
+          --------------------------------
+          This dropdown lets the user filter
+          beasts by number of horns.
+
+          IMPORTANT:
+          The state lives in App.jsx
+          We are ONLY updating it here.
+      */}
+      <Form className="horn-filter">
+
+        <Form.Select
+
+          // 🧠 Controlled Component
+          // The dropdown value comes from state in App
+          value={props.selectedHorns}
+
+          // 🧠 When user changes selection:
+          // update state in App.jsx
+          onChange={(e) =>
+            props.setSelectedHorns(e.target.value)
+          }
+        >
+
+          {/* 🦄 Dropdown Options */}
+          <option value="all">All Horns</option>
+          <option value="1">1 Horn</option>
+          <option value="2">2 Horns</option>
+          <option value="3">3 Horns</option>
+          <option value="100">100 Horns</option>
+
+        </Form.Select>
+
       </Form>
 
-      <Col>
-        <Row>
-          {filteredBeasts.map(beast => (
-            <HornedBeast
-              key={beast._id}
-              beast={beast}
-              displayAsModal={props.displayAsModal}
-              likes={beast.favorites}
-              addFavorite={addFavorite}
-            />
-          ))}
-        </Row>
-      </Col>
-    </div>
+      {/* 🐉 Beast Cards Grid */}
+      <Row xs={1} md={3} className="g-4">
+
+        {/* 🧠 Map over array to render cards */}
+        {props.allBeasts.map((beast, idx) => (
+
+          <HornedBeast
+            key={idx}
+
+            // 🦄 Full beast object
+            beast={beast}
+
+            // 🖼️ Individual props
+            src={beast.image_url}
+            title={beast.title}
+            description={beast.description}
+
+            // 🧠 Function passed from App
+            displayAsModal={props.displayAsModal}
+          />
+
+        ))}
+
+      </Row>
+
+    </Container>
   );
 }
 
