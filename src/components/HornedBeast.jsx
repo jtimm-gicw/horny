@@ -7,9 +7,9 @@ function HornedBeast(props) {
   const [favorites, setFavorites] = useState(0);
 
   function addFavorite() {
-    setFavorites(prev => prev + 1);;
+    setFavorites(prev => prev + 1);
     props.displayAsModal(props.title);
-  };
+  }
 
   return (
     <Col>
